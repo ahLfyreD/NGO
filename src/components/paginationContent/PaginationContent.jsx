@@ -37,8 +37,8 @@ const PaginationContent = () => {
     ];
 
     // styling
-    const active = 'bg-white cursor-pointer border border-white h-5 w-5 rounded-full'
-    const normal = 'cursor-pointer border border-white h-5 w-5 rounded-full'
+    const active = 'bg-white cursor-pointer border border-white h-3 w-3 rounded-full'
+    const normal = 'cursor-pointer border border-white h-3 w-3 rounded-full'
 
     // Calculate the total number of pages
     const totalPages = Math.ceil(items.length / itemsPerPage);
