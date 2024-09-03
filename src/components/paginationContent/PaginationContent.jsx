@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import widow from '/assets/widow.jpg';
 import papa from '/assets/papa.jpg';
 import children from '/assets/children.jpg';
 import students from '/assets/students.jpg';
+
+const Item = memo(({ item }) => {
+    return <div
+        className="flex-auto w-full h-96 mx-2 p-3 bg-cover text-center text-white relative"
+        style={{ backgroundImage: `url(${item.image})` }}>
+        {/* <div className='absolute inset-0 opacity-[80%] bg-black' /> */}
+        <div className='relative h-full flex flex-col justify-center items-center'>
+            <p className='text-3xl mb-6 text-white'>{item.title}</p>
+            <p className='text-xl mb-6 text-white'>{item.description}</p>
+        </div>
+    </div>;
+});
 
 const PaginationContent = () => {
     const [itemsPerPage, setItemsPerPage] = useState(2); // Default items per page
@@ -39,7 +51,7 @@ const PaginationContent = () => {
     // styling
     const active = 'bg-white cursor-pointer border border-white h-3 w-3 rounded-full'
     const normal = 'cursor-pointer border border-white h-3 w-3 rounded-full'
-
+    console.time('local')
     // Calculate the total number of pages
     const totalPages = Math.ceil(items.length / itemsPerPage);
 
@@ -69,20 +81,13 @@ const PaginationContent = () => {
         setCurrentPage(pageNumber);
     };
 
+    console.timeEnd('local')
+
     return (
         <div className="flex flex-col items-center">
             <div className="flex overflow-x-auto w-full mb-3">
                 {currentItems.map((item, index) => (
-                    <div
-                        key={index}
-                        className="flex-auto w-full h-96 mx-2 p-3 bg-cover text-center text-white relative"
-                        style={{ backgroundImage: `url(${item.image})` }}>
-                        <div className='absolute inset-0 opacity-[80%] bg-black' />
-                        <div className='relative h-full flex flex-col justify-center items-center'>
-                            <p className='text-3xl mb-6 text-white'>{item.title}</p>
-                            <p className='text-xl mb-6 text-white'>{item.description}</p>
-                        </div>
-                    </div>
+                    <Item key={index} item={item} />
                 ))}
             </div>
             <div className="flex gap-3 mt-3">

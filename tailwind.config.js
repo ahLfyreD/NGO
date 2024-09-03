@@ -8,7 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         homeBgImage: 'url(/assets/homeImage.jpg)',
-        // homeBgImage: 'url(/assets/imageBg.jpg)',
+        bgImage: 'url(/assets/imageBg.jpg)',
       }
     },
   },

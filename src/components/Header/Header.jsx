@@ -39,7 +39,7 @@ const Header = () => {
                                 </li>
                             })}
                             <li>
-                                <button className='border border-[#1f4717] bg-[#1f4717] text- p-3 font-semibold hover:text-[white] hover:bg-[#15300f] transition-all ease-in-out duration-300'>
+                                <button className='border border-blue-600 bg-blue-600 text- p-3 font-semibold hover:text-[white] hover:bg-blue-800 transition-all ease-in-out duration-300'>
                                     Donate Now
                                 </button>
                             </li>
