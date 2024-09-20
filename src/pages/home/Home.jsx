@@ -30,9 +30,12 @@ const Home = ({ toggleModal }) => {
                     <h2 className='text-center text-xl lg:text-3xl font-semibold text-[#333333] mb-4'>WHO WE ARE</h2>
                     <p className='max-w-2xl mx-auto font-medium sm:text-lg text-center text-[#686868]'>SaveLife is a NGO organisation founded in 2012 that partners with over 100 million people living with inequality and poverty to create opportunities to realise human potential.</p>
                     <div className='mx-auto mt-5 flex justify-center'>
-                        <button className='border border-[#333333] text-[#686868] p-3 font-semibold hover:text-[#333333] hover:bg-blue-600 transition-all ease-in-out duration-300'>
-                            Learn More
-                        </button>
+                        <Link to='/who_we_are'>
+                            <button className='border border-[#333333] text-[#686868] p-3 font-semibold hover:text-[#333333] hover:bg-blue-600 transition-all ease-in-out duration-300'>
+                                Learn More
+                            </button>
+                        </Link>
+
                     </div>
                 </div>
             </section>
