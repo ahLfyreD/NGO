@@ -5,14 +5,14 @@ import { FaArrowRight } from "react-icons/fa";
 import PaginationContent from '../../components/paginationContent/PaginationContent';
 import { eventData } from '../../components/Event_Data/EventData';
 
-const Home = () => {
+const Home = ({ toggleModal }) => {
 
 
     return (
         <>
             <section className="w-full h-[50vh] flex flex-col lg:h-screen bg-cover bg-homeBgImage relative">
                 {/* <div className='absolute inset-0 opacity-[30%] bg-[#333333]' /> */}
-                <Header />
+                <Header toggleModal={toggleModal} />
                 <div className="relative max-w-7xl mx-auto flex-1 flex flex-col justify-center items-center">
                     <div className='w-full mb-12'>
                         <h1 className='font-normal text-white text-2xl sm:text-7xl text-center'>Together We Can Transform Lives</h1>
@@ -41,7 +41,7 @@ const Home = () => {
                     <h2 className='text-center text-xl lg:text-3xl font-semibold text-[#333333] mb-4'>WHAT WE DO</h2>
                     <div className='grid lg:grid-cols-3 lg:gap-5 m-auto'>
                         <div className='bg-homeBgImage bg-cover min-w-[325px] w-full h-56  transition-all ease-in-out duration-500 flex flex-col justify-end mb-8'>
-                        <div className='relative w-full p-3 bg-[#333333]'>
+                            <div className='relative w-full p-3 bg-[#333333]'>
                                 <h2 className='relative text-center text-2xl font-semibold text-white'>Community Support</h2>
 
                             </div>
@@ -54,7 +54,7 @@ const Home = () => {
 
                         </div>
                         <div className='bg-homeBgImage bg-cover min-w-[325px] w-full h-56 transition-all ease-in-out duration-500 flex flex-col justify-end mb-8'>
-                        <div className='w-full p-3 bg-[#333333]'>
+                            <div className='w-full p-3 bg-[#333333]'>
                                 <h2 className='relative text-center text-2xl font-semibold text-white'>Skill Development</h2>
 
                             </div>
@@ -63,37 +63,7 @@ const Home = () => {
                 </div>
 
             </section>
-            <section className='p-5'>
-                <div className="relative max-w-7xl mx-auto flex flex-col justify-center items-center">
-                    <div className='grid lg:grid-cols-3 lg:gap-10 m-auto'>
 
-                        <div className='group mb-10 bg-white border-b-[6px] border-[#333333] shadow shadow-[#686868] rounded-lg min-w-[325px] w-full p-5 flex flex-col items-center justify-between hover:bg-[#333333] cursor-pointer transition-all ease-in-out duration-500'>
-
-                            <FaPeopleGroup className='text-8xl font-medium mb-4 group-hover:text-white' />
-                            <p className='text-2xl mb-4 group-hover:text-white'>Become a Volunteer</p>
-                            <p className='text-lg text-center mb-4 group-hover:text-white'>You are the hope of others, their happiness rest on you</p>
-
-                        </div>
-                        <div className='group mb-10 bg-white border-b-[6px] border-[#333333] shadow shadow-[#686868] rounded-lg min-w-[325px] w-full p-5 flex flex-col items-center justify-between hover:bg-[#333333] cursor-pointer transition-all ease-in-out duration-500'>
-
-                            <FaPeopleGroup className='text-8xl font-medium mb-4 group-hover:text-white' />
-                            <p className='text-2xl mb-4 group-hover:text-white'>Donate to Support</p>
-                            <p className='text-lg text-center mb-4 group-hover:text-white'>Your extra is someone else need. Don't give it</p>
-
-                        </div>
-                        <div className='group mb-10 bg-white border-b-[6px] border-[#333333] shadow shadow-[#686868] rounded-lg min-w-[325px] w-full p-5 flex flex-col items-center justify-between hover:bg-[#333333] cursor-pointer transition-all ease-in-out duration-500'>
-
-                            <FaPeopleGroup className='text-8xl font-medium mb-4 group-hover:text-white' />
-                            <p className='text-2xl mb-4 group-hover:text-white'>Become a Partner</p>
-                            <p className='text-lg text-center mb-4 group-hover:text-white'>Charity is a life time investment. It always pays</p>
-
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </section>
             <section className='p-5'>
                 <div className="relative p-5 sm:p-10 bg-[#ec7d49] max-w-6xl mx-auto">
                     <p className='font-bold text-white text-5xl mb-2'>In The News</p>

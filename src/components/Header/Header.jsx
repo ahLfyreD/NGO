@@ -1,9 +1,15 @@
-import React from 'react'
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { FaArrowUp } from "react-icons/fa";
 
 const Menu = [
     {
-        title: 'About',
-        path: '/about'
+        title: 'Home',
+        path: '/'
+    },
+    {
+        title: 'Who We Are',
+        path: '/who_we_are'
     },
     {
         title: 'Membership',
@@ -14,41 +20,70 @@ const Menu = [
         path: '/programs'
     },
     {
-        title: 'Events',
-        path: '/events'
-    },
-    {
         title: 'Join Us',
         path: '/join_us'
     },
 ]
 
-const Header = () => {
+const Header = ({ toggleModal }) => {
+
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+    const headerRef = useRef(null);
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsHeaderVisible(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Adjust this threshold as needed
+        );
+
+        if (headerRef.current) {
+            observer.observe(headerRef.current);
+        }
+
+        return () => {
+            if (headerRef.current) {
+                observer.unobserve(headerRef.current);
+            }
+        };
+    }, []);
+
+
     return (
         <>
-            <div className='relative z-10 w-full bg-transparent'>
+            <div ref={headerRef} className='relative z-10 w-full bg-transparent'>
                 <div className='p-3 w-full max-w-7xl mx-auto flex justify-between items-center'>
                     <div>
-                        Logo Display
+                        <Link to='/'>
+                            Home
+                        </Link>
                     </div>
-                    <div className='hidden lg:flex'>
-                        <ul className='flex list-none gap-4 text-white text-xl items-center'>
-                            {Menu.map((item, index) => {
-                                return <li key={index}>
-                                    {item.title}
-                                </li>
-                            })}
-                            <li>
-                                <button className='border border-blue-600 bg-blue-600 text- p-3 font-semibold hover:text-[white] hover:bg-blue-800 transition-all ease-in-out duration-300'>
-                                    Donate Now
-                                </button>
-                            </li>
-                        </ul>
+
+                    <div className='flex'>
+                        <button
+                            onClick={toggleModal}
+                            className='border border-blue-600 bg-blue-600 text- p-3 font-semibold hover:text-[white] hover:bg-blue-800 transition-all ease-in-out duration-300'>
+                            Donate Now
+                        </button>
                     </div>
 
                 </div>
-
             </div>
+
+            {!isHeaderVisible && (
+                <div
+                    className="cursor-pointer text-white shadow-lg fixed bottom-2 right-2 z-40 h-10 w-10 bg-[#333333] rounded-full flex justify-center items-center"
+                    onClick={() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        })
+                    }}>
+                    <FaArrowUp />
+                </div>
+            )}
         </>
 
     )

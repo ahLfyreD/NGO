@@ -7,7 +7,8 @@ import students from '/assets/students.jpg';
 const Item = memo(({ item }) => {
     return <div
         className="flex-auto w-full h-96 mx-2 p-3 bg-cover text-center text-white relative"
-        style={{ backgroundImage: `url(${item.image})` }}>
+        style={{ backgroundImage: `url(${item.image})` }}
+        >
         {/* <div className='absolute inset-0 opacity-[80%] bg-black' /> */}
         <div className='relative h-full flex flex-col justify-center items-center'>
             <p className='text-3xl mb-6 text-white'>{item.title}</p>
