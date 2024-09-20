@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
+import { Link } from 'react-router-dom';
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import PaginationContent from '../../components/paginationContent/PaginationContent';
