@@ -53,7 +53,7 @@ const Header = ({ toggleModal }) => {
 
     return (
         <>
-            <div ref={headerRef} className='relative z-10 w-full bg-transparent'>
+            <div ref={headerRef} className='relative w-full bg-transparent'>
                 <div className='p-3 w-full max-w-7xl mx-auto flex justify-between items-center'>
                     <div>
                         <Link to='/'>
@@ -68,7 +68,6 @@ const Header = ({ toggleModal }) => {
                             Donate Now
                         </button>
                     </div>
-
                 </div>
             </div>
 

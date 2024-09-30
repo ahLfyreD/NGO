@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         homeBgImage: 'url(/assets/homeImage.jpg)',
         bgImage: 'url(/assets/imageBg.jpg)',
+        donationImage: 'url(/assets/children.jpg)',
       }
     },
   },

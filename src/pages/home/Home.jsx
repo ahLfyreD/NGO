@@ -69,7 +69,7 @@ const Home = ({ toggleModal }) => {
             </section>
 
             <section className='p-5'>
-                <div className="relative p-5 sm:p-10 bg-[#ec7d49] max-w-6xl mx-auto">
+                <div className="relative p-5 sm:p-10 bg-[#ec7d49] max-w-7xl mx-auto">
                     <p className='font-bold text-white text-5xl mb-2'>In The News</p>
                     <p className='font-normal text-2xl mb-6 text-white'>Get the latest news here</p>
                     <div>
@@ -79,7 +79,7 @@ const Home = ({ toggleModal }) => {
             </section>
             <section className='relative'>
                 {/* <div className='absolute w-full h-[50%] bottom-0 bg-blue-600'></div> */}
-                <div className="relative max-w-6xl mx-auto p-5">
+                <div className="relative max-w-7xl mx-auto p-5">
                     <div className="lg:flex lg:justify-between w-full mb-5">
                         <div className='lg:w-[50%] mb-5'>
                             <p className='font-bold text-[#333333] text-5xl mb-3'>Upcoming Events</p>
