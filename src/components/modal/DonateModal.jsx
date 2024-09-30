@@ -67,7 +67,7 @@ const DonateModal = ({ toggleModal }) => {
                 className='relative lg:absolute lg:top-10 lg:right-10 bg-white h-7 w-7 text-center rounded-full font-bold mb-10 cursor-pointer'>
                 x
             </div>
-            <div className='max-w-6xl h-[600px] py-5 mx-auto lg:flex lg:gap-5 lg:justify-center lg:items-center px-10 lg:px-0'>
+            <div className='max-w-6xl lg:h-[600px] py-5 mx-auto lg:flex lg:gap-5 lg:justify-center lg:items-center px-5 lg:px-0'>
                 <div className='bg-white lg:max-w-[450px] h-full rounded-lg  '>
                     <div className='bg-donationImage bg-cover w-full h-[300px]'>
 
